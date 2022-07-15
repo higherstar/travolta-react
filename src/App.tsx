@@ -8,7 +8,6 @@ import theme from './theme';
 
 // Styles
 import './App.css';
-import '../node_modules/react-grid-layout/css/styles.css';
 
 // Create app
 const App: FC = ({ children }) => (
