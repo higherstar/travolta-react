@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 // Component
-import { Container } from '@mui/material';
+import { Layout } from '../components/Layout';
 
 // Constants
 import { MAIN_ROUTES, ROUTES } from '../constants';
@@ -24,9 +24,9 @@ const AppRouter = () => {
             key={path}
             path={path}
             element={
-              <Container>
+              <Layout>
                 <E />
-              </Container>
+              </Layout>
             }
           />
         ))}
