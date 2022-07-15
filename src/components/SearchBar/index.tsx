@@ -1,8 +1,9 @@
 // Dependencies
-import React, { FC } from 'react';
-import { MenuItem } from '@mui/material';
+import React, { ChangeEvent, FC, useState } from 'react';
+import { MenuItem, SelectChangeEvent } from '@mui/material';
 
 import { Icon, Input } from '../Common';
+import { RoomType } from '../../interfaces';
 import * as S from './styles';
 
 interface ISearchBar {
@@ -12,18 +13,39 @@ interface ISearchBar {
 
 // Export Searchbar component
 export const SearchBar: FC<ISearchBar> = ({ fullWidth, onSearch }) => {
+  const [destination, setDestination] = useState<string>();
+  const [fromDate, setFromDate] = useState<string>();
+  const [toDate, setToDate] = useState<string>();
+  const [roomType, setRoomType] = useState<RoomType>();
+
+  const handleChangeDestination = (e: ChangeEvent<HTMLInputElement>) => {
+    setDestination(e.target.value);
+  }
+
+  const handleChangeFromDate = (e: ChangeEvent<HTMLInputElement>) => {
+    setFromDate(e.target.value);
+  }
+
+  const handleChangeToDate = (e: ChangeEvent<HTMLInputElement>) => {
+    setToDate(e.target.value);
+  }
+
+  const handleChangeRoom = (e: SelectChangeEvent<any>) => {
+    setRoomType(e.target.value);
+  }
+
   return (
     <S.SearchBarWrapper direction="row" spacing={16} fullWidth={fullWidth}>
       <S.DestinationInput
         endAdornment={<Icon name="search" size={23} />}
         placeholder="What is your destination?"
+        value={destination}
+        onChange={handleChangeDestination}
       />
-      <Input size="large" type="date" />
-      <Input size="large" type="date" />
-      <S.RoomSelect value="2 Adults - 1 room">
-        <MenuItem value="1 Adults - 1 room">1 Adults - 1 room</MenuItem>
-        <MenuItem value="2 Adults - 1 room">2 Adults - 1 room</MenuItem>
-        <MenuItem value="3 Adults - 1 room">3 Adults - 1 room</MenuItem>
+      <Input value={fromDate} size="large" type="date" onChange={handleChangeFromDate} />
+      <Input value={toDate} size="large" type="date" onChange={handleChangeToDate} />
+      <S.RoomSelect value={roomType} onChange={handleChangeRoom}>
+        <MenuItem value={RoomType.OneAdultOneRoom}>1 Adults - 1 room</MenuItem>
       </S.RoomSelect>
       <S.SearchButton size="large" color="primary" onClick={onSearch}>
         Search

@@ -20,6 +20,12 @@ const hotelReducer = (state: HotelReducerState = initialState, action: any) => {
         ...state,
         hotels: payload,
       };
+
+    case HOTEL_ACTIONS.UPDATE_SEARCH_PARAMS:
+      return {
+        ...state,
+        searchParams: payload,
+      };
     default:
       return state;
   }

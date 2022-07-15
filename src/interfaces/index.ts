@@ -12,3 +12,8 @@ export interface ISearchParam {
   toDate?: string;
   room?: string;
 }
+
+export enum RoomType {
+  OneAdultOneRoom = 'ONE_ADULT_ONE_ROOM',
+  twoAdultsOneRoom = 'TWO_ADULTS_ONE_ROOM',
+}
