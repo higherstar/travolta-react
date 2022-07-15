@@ -6,6 +6,11 @@ declare module '@mui/material/Typography' {}
 // Define typography
 const typography = {
   fontFamily: '"Work Sans"',
+  intro: {
+    fontWeight: 600,
+    fontSize: 34,
+    lineHeight: '72px',
+  },
   h1: {
     fontWeight: 600,
     fontSize: 34,

@@ -100,21 +100,3 @@ export const Colors = () => (
     </tbody>
   </table>
 );
-
-// Dashboard
-export const Dashboard = () => (
-  <table>
-    <tbody>
-      {sizes.map((size) => (
-        <tr key={size.value}>
-          <td>{size.label}</td>
-          {colors.map((color) => (
-            <td key={color.value}>
-              <Checkbox size={size.value} color={color.value} defaultChecked />
-            </td>
-          ))}
-        </tr>
-      ))}
-    </tbody>
-  </table>
-);

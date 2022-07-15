@@ -8,6 +8,7 @@ export const lightIndigo = '#697990';
 export const darkIndigo = '#172844';
 export const whiteIndigo = '#F9FBFC';
 export const red = '#EA514D';
+export const pink = '#EB038C';
 export const lightBlue = '#b5c7e7';
 export const lightGreen = '#bbdcd0';
 
@@ -46,6 +47,7 @@ const palette = {
   whiteIndigo,
   lightBlue,
   lightGreen,
+  pink
 };
 
 // Export palette

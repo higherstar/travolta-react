@@ -170,34 +170,3 @@ export const WithIcon = () => (
     </tbody>
   </table>
 );
-
-// Dashboard
-export const Dashboard = () => (
-  <div>
-    {variants.map((variant) => (
-      <div key={variant.value}>
-        <h4>{variant.label}</h4>
-        <table>
-          <tbody>
-            {sizes.map((size) => (
-              <tr key={size.value}>
-                <td>{size.label}</td>
-                {colors.map((color) => (
-                  <td key={color.value}>
-                    <Button
-                      size={size.value}
-                      variant={variant.value}
-                      color={color.value}
-                    >
-                      {color.label}
-                    </Button>
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    ))}
-  </div>
-);

@@ -122,29 +122,3 @@ export const Colors = () => (
     </tbody>
   </table>
 );
-
-// Dashboard
-export const Dashboard = () => (
-  <table>
-    <tbody>
-      <tr>
-        <td />
-        {sizes.map((size) => (
-          <td key={size.value}>{size.label}</td>
-        ))}
-      </tr>
-      {iconList(iconSet).map((icon) => (
-        <tr key={icon}>
-          <td>{icon}</td>
-          {sizes.map((size) => (
-            <td key={size.value}>
-              <IconButton size={size.value}>
-                <Icon name={icon} />
-              </IconButton>
-            </td>
-          ))}
-        </tr>
-      ))}
-    </tbody>
-  </table>
-);
