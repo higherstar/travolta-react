@@ -173,25 +173,6 @@ const components: Components = {
       },
     },
   },
-  MuiChip: {
-    defaultProps: {
-      color: 'info',
-      size: 'small',
-    },
-    styleOverrides: {
-      root: {
-        borderRadius: 4,
-      },
-      label: {
-        fontWeight: 500,
-      },
-      labelSmall: {
-        fontSize: 12,
-        lineHeight: '20px',
-        padding: '2px 10px',
-      },
-    },
-  },
   MuiDivider: {
     styleOverrides: {
       root: {
