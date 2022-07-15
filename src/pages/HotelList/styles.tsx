@@ -9,5 +9,6 @@ export const HotelList = styled.div`
 `;
 
 export const ContentWrapper = styled(Container)`
+  margin-top: 84px;
   padding: 32px;
- `;
+`;

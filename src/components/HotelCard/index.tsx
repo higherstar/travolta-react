@@ -1,9 +1,14 @@
 import React, { FC } from 'react';
 
+import * as S from './styles';
+import { Typography } from '../Common';
+
 export const HotelCard: FC = () => {
   return (
-    <>
-      Hotel Card
-    </>
+    <S.HotelCardWrapper>
+      <S.HotelImage src="" sx={{ mr: 16 }}/>
+
+      <Typography variant="h3">Hotel Name</Typography>
+    </S.HotelCardWrapper>
   )
 };

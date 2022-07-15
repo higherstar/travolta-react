@@ -1,5 +1,6 @@
 // Dependencies
 import styled from 'styled-components';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // Export styled components
 export const Layout = styled.div`
@@ -14,6 +15,6 @@ export const Header = styled.div`
 `;
 
 // @ts-ignore
-export const Content = styled.div`
+export const Content = styled(PerfectScrollbar)`
   height: calc(100vh - 92px);
 `;

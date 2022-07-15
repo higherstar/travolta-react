@@ -6,12 +6,15 @@ import { Button, Input, Select } from '../Common';
 
 // Export styled components
 export const SearchBarWrapper = styled(Stack)<{ fullWidth?: boolean }>`
+  position: ${(props) => props.fullWidth ? 'fixed' : 'static'};
+  top: ${(props) => props.fullWidth ? '92px' : '0'};
   width: ${(props) => props.fullWidth ? '100%' : 'calc(100% - 64px)'};
   padding: ${(props) => props.fullWidth ? '16px 32px' : '16px'};
   border-radius: ${(props) => props.fullWidth ? '0' : '12px'};
   background: ${(props) => props.theme.palette.lightCyan};
   display: flex;
   justify-content: center;
+  z-index: 1;
 `;
 
 export const DestinationInput = styled(Input)`
