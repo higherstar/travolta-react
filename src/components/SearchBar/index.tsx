@@ -1,9 +1,11 @@
 // Dependencies
-import React, { ChangeEvent, FC, useState } from 'react';
+import React, { ChangeEvent, FC, useEffect, useState } from 'react';
 import { MenuItem, SelectChangeEvent } from '@mui/material';
+import { useSelector } from 'react-redux';
 
 import { Icon, Input } from '../Common';
 import { ISearchParam, RoomType } from '../../interfaces';
+import { RootState } from '../../redux/reducers';
 import * as S from './styles';
 
 interface ISearchBar {
@@ -13,10 +15,21 @@ interface ISearchBar {
 
 // Export Searchbar component
 export const SearchBar: FC<ISearchBar> = ({ fullWidth, onSearch }) => {
+  const searchParams = useSelector(
+    ({ hotelReducer: { searchParams } }: RootState) => searchParams
+  );
+
   const [destination, setDestination] = useState<string>();
   const [fromDate, setFromDate] = useState<string>();
   const [toDate, setToDate] = useState<string>();
   const [roomType, setRoomType] = useState<RoomType>();
+
+  useEffect(() => {
+    setDestination(searchParams.destination);
+    setFromDate(searchParams.fromDate);
+    setToDate(searchParams.toDate);
+    setRoomType(searchParams.roomType);
+  }, []);
 
   const handleChangeDestination = (e: ChangeEvent<HTMLInputElement>) => {
     setDestination(e.target.value);

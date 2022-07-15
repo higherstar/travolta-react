@@ -4,7 +4,7 @@ import { Divider } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { SearchBar, Typography, HotelCard } from '../../components';
-import { searchHotels, updateSearchParams } from '../../redux/actions';
+import { getHotels, updateSearchParams } from '../../redux/actions';
 import { RootState } from '../../redux/reducers';
 import { ISearchParam } from '../../interfaces';
 import * as S from './styles';
@@ -17,7 +17,7 @@ export const HotelList: FC = () => {
   );
 
   useEffect(() => {
-    dispatch(searchHotels(searchParams));
+    dispatch(getHotels(searchParams));
   }, [searchParams]);
 
   const handleSearch = async (params: ISearchParam) => {
