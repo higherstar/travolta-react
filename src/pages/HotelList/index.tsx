@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 import { Divider } from '@mui/material';
 
-import { SearchBar, Typography } from '../../components';
+import { SearchBar, Typography, HotelCard } from '../../components';
 import * as S from './styles';
 
 // Export Hotel list page
@@ -14,9 +14,11 @@ export const HotelList: FC = () => {
     <S.HotelList>
       <SearchBar onSearch={handleSearch} fullWidth />
 
-      <S.ContentWrapper>
+      <S.ContentWrapper maxWidth="lg">
         <Typography variant="h1">Berlin, Germany</Typography>
         <Divider />
+
+        <HotelCard />
       </S.ContentWrapper>
     </S.HotelList>
   );

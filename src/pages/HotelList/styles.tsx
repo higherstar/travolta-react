@@ -1,5 +1,6 @@
 // Dependencies
 import styled from 'styled-components';
+import { Container } from '@mui/material';
 
 // Export styled components
 export const HotelList = styled.div`
@@ -7,6 +8,6 @@ export const HotelList = styled.div`
   height: 100%;
 `;
 
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled(Container)`
   padding: 32px;
  `;

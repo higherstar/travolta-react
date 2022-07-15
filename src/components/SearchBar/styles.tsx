@@ -7,7 +7,7 @@ import { Button, Input, Select } from '../Common';
 // Export styled components
 export const SearchBarWrapper = styled(Stack)<{ fullWidth?: boolean }>`
   width: ${(props) => props.fullWidth ? '100%' : 'calc(100% - 64px)'};
-  padding: 16px;
+  padding: ${(props) => props.fullWidth ? '16px 32px' : '16px'};
   border-radius: ${(props) => props.fullWidth ? '0' : '12px'};
   background: ${(props) => props.theme.palette.lightCyan};
   display: flex;

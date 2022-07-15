@@ -192,6 +192,13 @@ const components: Components = {
       },
     },
   },
+  MuiDivider: {
+    styleOverrides: {
+      root: {
+        margin: '12px 0',
+      },
+    }
+  }
 };
 
 // Export components
