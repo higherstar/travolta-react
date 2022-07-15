@@ -1,3 +1,4 @@
+// Dependencies
 import React, { FC } from 'react';
 import { Box, Chip, Divider } from '@mui/material';
 
@@ -9,6 +10,7 @@ interface IHotelCardProps {
   data: IHotel;
 }
 
+// Export Hotel Card component
 export const HotelCard: FC<IHotelCardProps> = ({ data }) => {
   return (
     <S.HotelCardWrapper>

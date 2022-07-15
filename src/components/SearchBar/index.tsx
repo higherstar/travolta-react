@@ -46,7 +46,6 @@ export const SearchBar: FC<ISearchBar> = ({ fullWidth, onSearch }) => {
   }
 
   const handleChangeRoom = (e: SelectChangeEvent<any>) => {
-    console.log(e.target.value);
     setRoomType(e.target.value);
   }
 
