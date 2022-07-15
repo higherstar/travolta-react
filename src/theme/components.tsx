@@ -10,6 +10,7 @@ import {
   cyan,
   darkCyan,
   lightCyan,
+  white,
 } from './palette';
 
 // Shadows
@@ -44,7 +45,7 @@ const components: Components = {
     styleOverrides: {
       root: {
         minHeight: 44,
-        backgroundColor: lightCyan,
+        backgroundColor: white,
         borderRadius: 8,
         fontSize: 16,
         lineHeight: '24px',
