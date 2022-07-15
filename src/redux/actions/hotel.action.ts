@@ -18,7 +18,7 @@ export const getHotels = (params: ISearchParam) =>
 
     return dispatch({
       type: HOTEL_ACTIONS.GET_HOTEL_LIST,
-      payload: getPromise,
+      payload: getPromise(),
     });
   };
 

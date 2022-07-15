@@ -1,18 +1,23 @@
 import React, { FC } from 'react';
 import { Box, Chip, Divider } from '@mui/material';
 
-import * as S from './styles';
 import { Typography } from '../Common';
+import { IHotel } from '../../interfaces';
+import * as S from './styles';
 
-export const HotelCard: FC = () => {
+interface IHotelCardProps {
+  data: IHotel;
+}
+
+export const HotelCard: FC<IHotelCardProps> = ({ data }) => {
   return (
     <S.HotelCardWrapper>
       <S.HotelImage src="" sx={{ mr: 16 }}/>
 
       <Box>
-        <Typography variant="h2">Hotel Name</Typography>
-        <Typography variant="h3">Berlin, Germany</Typography>
-        <S.Price>1200.00$</S.Price>
+        <Typography variant="h2">{data.name}</Typography>
+        <Typography variant="h3">{`${data.city}, ${data.country}`}</Typography>
+        <S.Price>{`${data.price}$`}</S.Price>
         <Chip label="Available" color="success" />
       </Box>
 

@@ -15,7 +15,7 @@ const hotelReducer = (state: HotelReducerState = initialState, action: any) => {
   const { type, payload } = action;
 
   switch (type) {
-    case HOTEL_ACTIONS.GET_HOTEL_LIST:
+    case HOTEL_ACTIONS.GET_HOTEL_LIST_SUCCESS:
       return {
         ...state,
         hotels: payload,

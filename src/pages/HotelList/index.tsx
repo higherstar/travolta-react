@@ -12,8 +12,11 @@ import * as S from './styles';
 // Export Hotel list page
 export const HotelList: FC = () => {
   const dispatch = useDispatch();
-  const searchParams = useSelector(
-    ({ hotelReducer: { searchParams } }: RootState) => searchParams
+  const { hotels, searchParams } = useSelector(
+    ({ hotelReducer: { hotels, searchParams } }: RootState) => ({
+      hotels,
+      searchParams,
+    })
   );
 
   useEffect(() => {
@@ -33,7 +36,11 @@ export const HotelList: FC = () => {
         <Typography variant="h1">Berlin, Germany</Typography>
         <Divider />
 
-        <HotelCard />
+        {
+          hotels.map((hotelData, index) => (
+            <HotelCard data={hotelData} />
+          ))
+        }
       </S.ContentWrapper>
     </S.HotelList>
   );

@@ -19,15 +19,15 @@ export const SearchBar: FC<ISearchBar> = ({ fullWidth, onSearch }) => {
     ({ hotelReducer: { searchParams } }: RootState) => searchParams
   );
 
-  const [destination, setDestination] = useState<string>();
-  const [fromDate, setFromDate] = useState<string>();
-  const [toDate, setToDate] = useState<string>();
+  const [destination, setDestination] = useState<string>('');
+  const [fromDate, setFromDate] = useState<string>('');
+  const [toDate, setToDate] = useState<string>('');
   const [roomType, setRoomType] = useState<RoomType>();
 
   useEffect(() => {
-    setDestination(searchParams.destination);
-    setFromDate(searchParams.fromDate);
-    setToDate(searchParams.toDate);
+    setDestination(searchParams.destination || '');
+    setFromDate(searchParams.fromDate || '');
+    setToDate(searchParams.toDate || '');
     setRoomType(searchParams.roomType);
   }, []);
 
