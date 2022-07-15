@@ -1,17 +1,27 @@
 // Dependencies
 import styled from 'styled-components';
-import { Box, Stack } from '@mui/material';
+import { Stack } from '@mui/material';
 
-import { Input } from '../Common';
+import { Button, Input, Select } from '../Common';
 
 // Export styled components
 export const SearchBarWrapper = styled(Stack)`
-  padding: 12px;
+  width: 100%;
+  padding: 16px;
   border-radius: 12px;
   background: ${(props) => props.theme.palette.lightCyan};
   display: flex;
+  justify-content: center;
 `;
 
 export const DestinationInput = styled(Input)`
-  width: 300px !important;
-`
+  flex: 1;
+`;
+
+export const SearchButton = styled(Button)`
+  width: 300px;
+`;
+
+export const RoomSelect = styled(Select)`
+  width: 300px;
+`;

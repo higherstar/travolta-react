@@ -17,5 +17,5 @@ export const Header = styled.div`
 // @ts-ignore
 export const Content = styled(PerfectScrollbar)`
   height: calc(100vh - 92px);
-  padding: 36px;
+  padding: 36px 64px;
 `;
