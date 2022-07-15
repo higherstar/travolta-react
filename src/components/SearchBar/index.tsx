@@ -30,6 +30,7 @@ export const SearchBar: FC<ISearchBar> = ({ fullWidth, onSearch }) => {
     setFromDate(searchParams.fromDate || '');
     setToDate(searchParams.toDate || '');
     setRoomType(searchParams.roomType || '');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleChangeDestination = (e: ChangeEvent<HTMLInputElement>) => {

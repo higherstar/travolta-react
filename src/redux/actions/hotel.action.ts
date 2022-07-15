@@ -12,16 +12,25 @@ export const getHotels = (params: ISearchParam) =>
     api: ApiTypes
   ) => {
     const getPromise = async () => {
-      const res = await api.getHotels(params);
-      return res.data
+      dispatch({
+        type: HOTEL_ACTIONS.GET_HOTEL_LIST_PENDING,
+      });
+
+      try {
+        const res = await api.getHotels(params);
+        return res.data;
+      } catch (e) {
+        dispatch({
+          type: HOTEL_ACTIONS.GET_HOTEL_LIST_REJECTED,
+        });
+      }
     }
 
     return dispatch({
       type: HOTEL_ACTIONS.GET_HOTEL_LIST,
-      payload: getPromise(),
+      payload: getPromise()
     });
   };
-
 
 export const updateSearchParams =
   (param: any) => (dispatch: ThunkDispatch<any, any, any>) => {
