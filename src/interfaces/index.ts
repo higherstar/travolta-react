@@ -10,7 +10,7 @@ export interface ISearchParam {
   destination?: string;
   fromDate?: string;
   toDate?: string;
-  room?: string;
+  roomType?: string;
 }
 
 export enum RoomType {

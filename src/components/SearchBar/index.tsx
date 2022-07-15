@@ -3,12 +3,12 @@ import React, { ChangeEvent, FC, useState } from 'react';
 import { MenuItem, SelectChangeEvent } from '@mui/material';
 
 import { Icon, Input } from '../Common';
-import { RoomType } from '../../interfaces';
+import { ISearchParam, RoomType } from '../../interfaces';
 import * as S from './styles';
 
 interface ISearchBar {
   fullWidth?: boolean;
-  onSearch: () => void;
+  onSearch: (searchParams: ISearchParam) => void;
 }
 
 // Export Searchbar component
@@ -34,6 +34,15 @@ export const SearchBar: FC<ISearchBar> = ({ fullWidth, onSearch }) => {
     setRoomType(e.target.value);
   }
 
+  const handleSearchClick = () => {
+    onSearch({
+      destination,
+      fromDate,
+      toDate,
+      roomType,
+    })
+  }
+
   return (
     <S.SearchBarWrapper direction="row" spacing={16} fullWidth={fullWidth}>
       <S.DestinationInput
@@ -47,7 +56,7 @@ export const SearchBar: FC<ISearchBar> = ({ fullWidth, onSearch }) => {
       <S.RoomSelect value={roomType} onChange={handleChangeRoom}>
         <MenuItem value={RoomType.OneAdultOneRoom}>1 Adults - 1 room</MenuItem>
       </S.RoomSelect>
-      <S.SearchButton size="large" color="primary" onClick={onSearch}>
+      <S.SearchButton size="large" color="primary" onClick={handleSearchClick}>
         Search
       </S.SearchButton>
     </S.SearchBarWrapper>

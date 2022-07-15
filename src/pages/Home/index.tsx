@@ -1,16 +1,21 @@
 // Dependencies
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import { SearchBar, Typography } from '../../components';
 import { ROUTES } from '../../constants';
+import { ISearchParam } from '../../interfaces';
+import { updateSearchParams } from '../../redux/actions';
 import * as S from './styles';
 
 // Export Home page
 export const Home: FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleSearch = () => {
+  const handleSearch = (params: ISearchParam) => {
+    dispatch(updateSearchParams(params));
     navigate(ROUTES.List);
   }
 
