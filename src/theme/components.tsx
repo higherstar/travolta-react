@@ -176,7 +176,10 @@ const components: Components = {
   MuiDivider: {
     styleOverrides: {
       root: {
-        margin: '12px 0',
+        margin: '16px 0',
+        '&.MuiDivider-vertical': {
+          margin: '0 16px',
+        },
       },
     }
   }

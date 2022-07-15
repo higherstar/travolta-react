@@ -13,11 +13,16 @@ export const HotelCardWrapper = styled(Card)`
 export const HotelImage = styled(Avatar)`
   height: 200px !important;
   width: 200px !important;
+  
+  svg {
+    width: 60px;
+    height: 60px;
+  }
 `
 
 export const Price = styled(Typography)`
   font-size: 54px !important;
   line-height: 80px !important;
   font-weight: 700 !important;
-  color: ${(props) => props.theme.palette.success.main};
+  color: ${(props) => props.theme.palette.darkIndigo};
 `

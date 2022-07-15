@@ -29,9 +29,6 @@ const palette = {
   info: {
     main: lightBlue,
   },
-  success: {
-    main: lightGreen,
-  },
   error: {
     main: red,
   },
