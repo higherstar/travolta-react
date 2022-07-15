@@ -1,0 +1,3 @@
+export enum HOTEL_ACTIONS {
+  GET_HOTEL_LIST = "GET_HOTEL_LIST",
+}

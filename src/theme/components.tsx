@@ -152,7 +152,7 @@ const components: Components = {
     styleOverrides: {
       root: {
         borderRadius: 12,
-        boxShadow: shadows[1],
+        boxShadow: shadows[3],
       },
     },
   },
