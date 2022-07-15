@@ -33,7 +33,7 @@ export const HotelList: FC = () => {
       <SearchBar onSearch={handleSearch} fullWidth />
 
       <S.ContentWrapper maxWidth="lg">
-        <Typography variant="h1">Berlin, Germany</Typography>
+        <Typography variant="h1">{ searchParams.destination }</Typography>
         <Divider />
 
         {

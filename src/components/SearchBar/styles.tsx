@@ -11,6 +11,8 @@ export const SearchBarWrapper = styled(Stack)<{ fullWidth?: boolean }>`
   width: ${(props) => props.fullWidth ? '100%' : 'calc(100% - 64px)'};
   padding: ${(props) => props.fullWidth ? '16px 32px' : '16px'};
   border-radius: ${(props) => props.fullWidth ? '0' : '12px'};
+  border-bottom: ${(props) => props.fullWidth ? `1px solid` : 'none'};
+  border-bottom-color: ${(props) => props.theme.palette.cyan};
   background: ${(props) => props.theme.palette.lightCyan};
   display: flex;
   justify-content: center;

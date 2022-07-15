@@ -14,11 +14,14 @@ export const HotelCard: FC<IHotelCardProps> = ({ data }) => {
     <S.HotelCardWrapper>
       <S.HotelImage src="" sx={{ mr: 16 }}/>
 
-      <Box>
+      <Box width={200} flexShrink={0}>
         <Typography variant="h2">{data.name}</Typography>
         <Typography variant="h3">{`${data.city}, ${data.country}`}</Typography>
         <S.Price>{`${data.price}$`}</S.Price>
-        <Chip label="Available" color="success" />
+        <Chip
+          label={data.availability ? 'Available' : 'Not available'}
+          color={data.availability ? 'success' : 'error'}
+        />
       </Box>
 
       <Divider orientation="vertical" flexItem />

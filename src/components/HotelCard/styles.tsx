@@ -8,6 +8,7 @@ import { Typography } from '../Common';
 export const HotelCardWrapper = styled(Card)`
   padding: 16px;
   display: flex;
+  margin: 32px 0;
 `;
 
 export const HotelImage = styled(Avatar)`
