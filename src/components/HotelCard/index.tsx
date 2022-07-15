@@ -12,7 +12,7 @@ interface IHotelCardProps {
 export const HotelCard: FC<IHotelCardProps> = ({ data }) => {
   return (
     <S.HotelCardWrapper>
-      <S.HotelImage src="" sx={{ mr: 16 }}/>
+      <S.HotelImage src={data.photo} sx={{ mr: 16 }}/>
 
       <Box width={200} flexShrink={0}>
         <Typography variant="h2">{data.name}</Typography>

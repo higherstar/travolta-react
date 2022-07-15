@@ -4,6 +4,7 @@ export interface IHotel {
   country: string;
   city: string;
   availability: boolean;
+  photo: string;
 }
 
 export interface ISearchParam {
