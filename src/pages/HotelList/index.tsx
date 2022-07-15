@@ -33,9 +33,13 @@ export const HotelList: FC = () => {
       <SearchBar onSearch={handleSearch} fullWidth />
 
       <S.ContentWrapper maxWidth="lg">
-        <Typography variant="h1">{ searchParams.destination }</Typography>
+        <Typography
+          variant="h1"
+          color={!!searchParams.destination ? 'primary' : 'secondary'}
+        >
+          { searchParams.destination || 'No destination' }
+        </Typography>
         <Divider />
-
         {
           hotels.map((hotelData, index) => (
             <HotelCard key={index} data={hotelData} />

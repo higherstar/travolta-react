@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { Icon, Input, Typography } from '../Common';
 import { ISearchParam } from '../../interfaces';
 import { RootState } from '../../redux/reducers';
+import { ROOM_TYPES } from '../../constants/roomTypes';
 import * as S from './styles';
 
 interface ISearchBar {
@@ -44,6 +45,7 @@ export const SearchBar: FC<ISearchBar> = ({ fullWidth, onSearch }) => {
   }
 
   const handleChangeRoom = (e: SelectChangeEvent<any>) => {
+    console.log(e.target.value);
     setRoomType(e.target.value);
   }
 
@@ -69,8 +71,12 @@ export const SearchBar: FC<ISearchBar> = ({ fullWidth, onSearch }) => {
         <Typography>-</Typography>
         <Input value={toDate} size="large" type="date" onChange={handleChangeToDate} />
       </Stack>
-      <S.RoomSelect value="1" onChange={handleChangeRoom}>
-        <MenuItem value="1">1 Adults - 1 room</MenuItem>
+      <S.RoomSelect value={roomType} onChange={handleChangeRoom}>
+        {
+          ROOM_TYPES.map((room, index) => (
+            <MenuItem key={index} value={room.id}>{room.label}</MenuItem>
+          ))
+        }
       </S.RoomSelect>
       <S.SearchButton size="large" color="primary" onClick={handleSearchClick}>
         Search
