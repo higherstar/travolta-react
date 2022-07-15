@@ -38,7 +38,7 @@ export const HotelList: FC = () => {
 
         {
           hotels.map((hotelData, index) => (
-            <HotelCard data={hotelData} />
+            <HotelCard key={index} data={hotelData} />
           ))
         }
       </S.ContentWrapper>

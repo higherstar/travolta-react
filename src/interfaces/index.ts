@@ -10,10 +10,5 @@ export interface ISearchParam {
   destination?: string;
   fromDate?: string;
   toDate?: string;
-  roomType?: RoomType;
-}
-
-export enum RoomType {
-  OneAdultOneRoom = 'ONE_ADULT_ONE_ROOM',
-  twoAdultsOneRoom = 'TWO_ADULTS_ONE_ROOM',
+  roomType?: string;
 }

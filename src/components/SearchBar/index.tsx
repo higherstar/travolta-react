@@ -1,10 +1,10 @@
 // Dependencies
 import React, { ChangeEvent, FC, useEffect, useState } from 'react';
-import { MenuItem, SelectChangeEvent } from '@mui/material';
+import { MenuItem, SelectChangeEvent, Stack } from '@mui/material';
 import { useSelector } from 'react-redux';
 
-import { Icon, Input } from '../Common';
-import { ISearchParam, RoomType } from '../../interfaces';
+import { Icon, Input, Typography } from '../Common';
+import { ISearchParam } from '../../interfaces';
 import { RootState } from '../../redux/reducers';
 import * as S from './styles';
 
@@ -22,13 +22,13 @@ export const SearchBar: FC<ISearchBar> = ({ fullWidth, onSearch }) => {
   const [destination, setDestination] = useState<string>('');
   const [fromDate, setFromDate] = useState<string>('');
   const [toDate, setToDate] = useState<string>('');
-  const [roomType, setRoomType] = useState<RoomType>();
+  const [roomType, setRoomType] = useState<string>('');
 
   useEffect(() => {
     setDestination(searchParams.destination || '');
     setFromDate(searchParams.fromDate || '');
     setToDate(searchParams.toDate || '');
-    setRoomType(searchParams.roomType);
+    setRoomType(searchParams.roomType || '');
   }, []);
 
   const handleChangeDestination = (e: ChangeEvent<HTMLInputElement>) => {
@@ -64,10 +64,13 @@ export const SearchBar: FC<ISearchBar> = ({ fullWidth, onSearch }) => {
         value={destination}
         onChange={handleChangeDestination}
       />
-      <Input value={fromDate} size="large" type="date" onChange={handleChangeFromDate} />
-      <Input value={toDate} size="large" type="date" onChange={handleChangeToDate} />
-      <S.RoomSelect value={roomType} onChange={handleChangeRoom}>
-        <MenuItem value={RoomType.OneAdultOneRoom}>1 Adults - 1 room</MenuItem>
+      <Stack direction="row" alignItems="center" spacing={4}>
+        <Input value={fromDate} size="large" type="date" onChange={handleChangeFromDate} />
+        <Typography>-</Typography>
+        <Input value={toDate} size="large" type="date" onChange={handleChangeToDate} />
+      </Stack>
+      <S.RoomSelect value="1" onChange={handleChangeRoom}>
+        <MenuItem value="1">1 Adults - 1 room</MenuItem>
       </S.RoomSelect>
       <S.SearchButton size="large" color="primary" onClick={handleSearchClick}>
         Search
