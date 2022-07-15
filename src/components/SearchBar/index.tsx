@@ -6,13 +6,14 @@ import { Icon, Input } from '../Common';
 import * as S from './styles';
 
 interface ISearchBar {
-  onSearch: () => void
+  fullWidth?: boolean;
+  onSearch: () => void;
 }
 
 // Export Searchbar component
-export const SearchBar: FC<ISearchBar> = ({ onSearch }) => {
+export const SearchBar: FC<ISearchBar> = ({ fullWidth, onSearch }) => {
   return (
-    <S.SearchBarWrapper direction="row" spacing={16}>
+    <S.SearchBarWrapper direction="row" spacing={16} fullWidth={fullWidth}>
       <S.DestinationInput
         endAdornment={<Icon name="search" size={23} />}
         placeholder="What is your destination?"

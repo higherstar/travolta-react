@@ -5,10 +5,10 @@ import { Stack } from '@mui/material';
 import { Button, Input, Select } from '../Common';
 
 // Export styled components
-export const SearchBarWrapper = styled(Stack)`
-  width: 100%;
+export const SearchBarWrapper = styled(Stack)<{ fullWidth?: boolean }>`
+  width: ${(props) => props.fullWidth ? '100%' : 'calc(100% - 64px)'};
   padding: 16px;
-  border-radius: 12px;
+  border-radius: ${(props) => props.fullWidth ? '0' : '12px'};
   background: ${(props) => props.theme.palette.lightCyan};
   display: flex;
   justify-content: center;

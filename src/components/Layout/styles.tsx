@@ -1,6 +1,5 @@
 // Dependencies
 import styled from 'styled-components';
-import { Container } from '@mui/material';
 
 // Export styled components
 export const Layout = styled.div`
@@ -15,7 +14,6 @@ export const Header = styled.div`
 `;
 
 // @ts-ignore
-export const Content = styled(Container)`
+export const Content = styled.div`
   height: calc(100vh - 92px);
-  padding: 36px 64px;
 `;
