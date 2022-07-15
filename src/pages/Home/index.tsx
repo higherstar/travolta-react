@@ -10,7 +10,7 @@ export const Home: FC = () => {
   return (
     <S.Home>
       <S.IntroLabel>We love to travel as much as you do</S.IntroLabel>
-      <Typography>
+      <Typography mb={16}>
         We create unbeatable deals you will not get anywhere else - so you can save your money for an unforgettable
         travel experience
       </Typography>
