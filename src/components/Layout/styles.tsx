@@ -1,6 +1,6 @@
 // Dependencies
 import styled from 'styled-components';
-import PerfectScrollbar from 'react-perfect-scrollbar';
+import { Container } from '@mui/material';
 
 // Export styled components
 export const Layout = styled.div`
@@ -15,7 +15,7 @@ export const Header = styled.div`
 `;
 
 // @ts-ignore
-export const Content = styled(PerfectScrollbar)`
+export const Content = styled(Container)`
   height: calc(100vh - 92px);
   padding: 36px 64px;
 `;

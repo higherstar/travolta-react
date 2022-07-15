@@ -5,8 +5,12 @@ import { MenuItem } from '@mui/material';
 import { Icon, Input } from '../Common';
 import * as S from './styles';
 
+interface ISearchBar {
+  onSearch: () => void
+}
+
 // Export Searchbar component
-export const SearchBar: FC = () => {
+export const SearchBar: FC<ISearchBar> = ({ onSearch }) => {
   return (
     <S.SearchBarWrapper direction="row" spacing={16}>
       <S.DestinationInput
@@ -20,7 +24,9 @@ export const SearchBar: FC = () => {
         <MenuItem value="2 Adults - 1 room">2 Adults - 1 room</MenuItem>
         <MenuItem value="3 Adults - 1 room">3 Adults - 1 room</MenuItem>
       </S.RoomSelect>
-      <S.SearchButton size="large" color="primary">Search</S.SearchButton>
+      <S.SearchButton size="large" color="primary" onClick={onSearch}>
+        Search
+      </S.SearchButton>
     </S.SearchBarWrapper>
   )
 };
