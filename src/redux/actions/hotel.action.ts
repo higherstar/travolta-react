@@ -12,18 +12,8 @@ export const getHotels = (params: ISearchParam) =>
     api: ApiTypes
   ) => {
     const getPromise = async () => {
-      dispatch({
-        type: HOTEL_ACTIONS.GET_HOTEL_LIST_PENDING,
-      });
-
-      try {
-        const res = await api.getHotels(params);
-        return res.data;
-      } catch (e) {
-        dispatch({
-          type: HOTEL_ACTIONS.GET_HOTEL_LIST_REJECTED,
-        });
-      }
+      const res = await api.getHotels(params);
+      return res.data;
     }
 
     return dispatch({

@@ -17,13 +17,13 @@ const hotelReducer = (state: HotelReducerState = initialState, action: any) => {
   const { type, payload } = action;
 
   switch (type) {
-    case HOTEL_ACTIONS.GET_HOTEL_LIST_PENDING:
+    case HOTEL_ACTIONS.GET_HOTEL_LIST_START:
       return {
         ...state,
         loading: true,
       };
 
-    case HOTEL_ACTIONS.GET_HOTEL_LIST_REJECTED:
+    case HOTEL_ACTIONS.GET_HOTEL_LIST_ERROR:
       return {
         ...state,
         loading: false,
