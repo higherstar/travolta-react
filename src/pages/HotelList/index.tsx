@@ -50,7 +50,7 @@ export const HotelList: FC = () => {
           )
         }
         {
-          !loading && hotels && hotels.map((hotelData, index) => (
+          !loading && Array.isArray(hotels) && hotels?.length > 0 && hotels.map((hotelData, index) => (
             <HotelCard key={index} data={hotelData} />
           ))
         }
